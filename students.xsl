@@ -1,7 +1,6 @@
 <!-- students.xsl -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" indent="yes"/>
-
   <xsl:template match="/students">
     <html>
       <head>
@@ -33,6 +32,11 @@
           tr:hover {
             background-color: #e2e2e2;
           }
+          /* Corrected order of classes for ranking colors */
+          .rank-1, .rank-2, .rank-3 { background-color: #4caf50; } /* Green */
+          .rank-4, .rank-5, .rank-6 { background-color: #ff9800; } /* Orange */
+          .rank-7 { background-color: #f44336; } /* Red */
+          /* Add more classes for additional rank colors as needed */
         </style>
       </head>
       <body>
@@ -55,17 +59,9 @@
       </body>
     </html>
   </xsl:template>
-
   <xsl:template match="student">
     <xsl:variable name="rank" select="position()" />
-    <xsl:variable name="color">
-      <xsl:choose>
-        <xsl:when test="$rank <= 3">green</xsl:when>
-        <xsl:when test="$rank <= 6">orange</xsl:when>
-        <xsl:otherwise>red</xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <tr style="background-color:{$color};">
+    <tr class="rank-{$rank}">
       <td><xsl:value-of select="name"/></td>
       <td><xsl:value-of select="rollno"/></td>
       <td><xsl:value-of select="marks/subject1"/></td>
