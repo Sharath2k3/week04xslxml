@@ -8,10 +8,10 @@
         <style>
           body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            /* No background color */
           }
           h2 {
-            color: #333333;
+            /* No color */
           }
           table {
             width: 100%;
@@ -24,19 +24,15 @@
             padding: 12px;
           }
           th {
-            background-color: #3498db;
-            color: white;
+            /* No background color */
+            color: black;
           }
           tr:nth-child(even) {
-            background-color: #f9f9f9;
+            /* No background color */
           }
           tr:hover {
-            background-color: #e2e2e2;
+            /* No background color */
           }
-          .rank-1, .rank-2, .rank-3 { background-color: #4caf50; } /* Green */
-          .rank-4, .rank-5, .rank-6 { background-color: #ff9800; } /* Orange */
-          .rank-7 { background-color: #f44336; } /* Red */
-          /* Add more classes for additional rank colors as needed */
         </style>
       </head>
       <body>
@@ -62,7 +58,7 @@
 
   <xsl:template match="student">
     <xsl:variable name="rank" select="position()" />
-    <tr class="rank-{$rank}">
+    <tr>
       <td><xsl:value-of select="name"/></td>
       <td><xsl:value-of select="rollno"/></td>
       <td><xsl:value-of select="marks/subject1"/></td>
