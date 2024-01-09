@@ -33,6 +33,7 @@
           tr:hover {
             background-color: #e2e2e2;
           }
+          /* Corrected order of classes for ranking colors */
           .rank-1, .rank-2, .rank-3 { background-color: #4caf50; } /* Green */
           .rank-4, .rank-5, .rank-6 { background-color: #ff9800; } /* Orange */
           .rank-7 { background-color: #f44336; } /* Red */
