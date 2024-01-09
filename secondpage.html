@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Names (Marks > 50)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h2 {
+            color: #333333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 8px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Names (Marks > 50)</h2>
+<ul id="studentList"></ul>
+
+<script>
+    // Function to fetch and display student names with marks above 50 from XML
+    function displayStudentsAbove50() {
+        // Load the XML file
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                // Parse XML response
+                var xmlDoc = this.responseXML;
+                var students = xmlDoc.getElementsByTagName("student");
+
+                // Display names with marks above 50 in the HTML page
+                var studentList = document.getElementById("studentList");
+                for (var i = 0; i < students.length; i++) {
+                    var marks = parseInt(students[i].getElementsByTagName("total")[0].textContent);
+                    if (marks > 50) {
+                        var li = document.createElement("li");
+                        li.textContent = students[i].getElementsByTagName("name")[0].textContent;
+                        studentList.appendChild(li);
+                    }
+                }
+            }
+        };
+        xmlhttp.open("GET", "students.xml", true);
+        xmlhttp.send();
+    }
+
+    // Call the function when the page loads
+    window.onload = displayStudentsAbove50;
+</script>
+
+</body>
+</html>

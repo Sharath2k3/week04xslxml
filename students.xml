@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="students.xsl"?>
+
+<students>
+    <student>
+        <name>John Doe</name>
+        <rollno>101</rollno>
+        <marks>
+            <subject1>85</subject1>
+            <subject2>90</subject2>
+            <subject3>78</subject3>
+        </marks>
+        <total>253</total>
+        <average>84.33</average>
+    </student>
+    
+    <student>
+        <name>Jane Smith</name>
+        <rollno>102</rollno>
+        <marks>
+            <subject1>92</subject1>
+            <subject2>88</subject2>
+            <subject3>95</subject3>
+        </marks>
+        <total>275</total>
+        <average>91.67</average>
+    </student>
+
+    <student>
+        <name>Megan Davis</name>
+        <rollno>107</rollno>
+        <marks>
+            <subject1>91</subject1>
+            <subject2>84</subject2>
+            <subject3>89</subject3>
+        </marks>
+        <total>264</total>
+        <average>88.00</average>
+    </student>
+
+
+     <student>
+        <name>Sarah Turner</name>
+        <rollno>106</rollno>
+        <marks>
+            <subject1>87</subject1>
+            <subject2>93</subject2>
+            <subject3>88</subject3>
+        </marks>
+        <total>268</total>
+        <average>89.33</average>
+    </student>
+	
+     <student>
+        <name>Aarav Sharma</name>
+        <rollno>108</rollno>
+        <marks>
+            <subject1>45</subject1>
+            <subject2>38</subject2>
+            <subject3>42</subject3>
+        </marks>
+        <total>125</total>
+        <average>41.67</average>
+    </student>
+
+    <student>
+        <name>Aisha Patel</name>
+        <rollno>109</rollno>
+        <marks>
+            <subject1>12</subject1>
+            <subject2>12</subject2>
+            <subject3>12</subject3>
+        </marks>
+        <total>36</total>
+        <average>12.00</average>
+    </student>
+
+    <student>
+        <name>Akshay singh</name>
+        <rollno>110</rollno>
+        <marks>
+            <subject1>10</subject1>
+            <subject2>10</subject2>
+            <subject3>10</subject3>
+        </marks>
+        <total>30</total>
+        <average>10.00</average>
+    </student>
+
+
+</students>
