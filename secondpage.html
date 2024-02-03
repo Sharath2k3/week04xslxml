@@ -19,10 +19,19 @@
         }
         li {
             margin-bottom: 8px;
-            background-color: #ffffff;
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .below-50 {
+            color: red;
+            cursor: pointer;
+        }
+
+        .below-50:hover::after {
+            content: " (Marks: " attr(data-marks) ")";
+            color: black;
         }
     </style>
 </head>
@@ -46,11 +55,15 @@
                 var studentList = document.getElementById("studentList");
                 for (var i = 0; i < students.length; i++) {
                     var marks = parseInt(students[i].getElementsByTagName("total")[0].textContent);
-                    if (marks > 50) {
-                        var li = document.createElement("li");
-                        li.textContent = students[i].getElementsByTagName("name")[0].textContent;
-                        studentList.appendChild(li);
+                    var li = document.createElement("li");
+                    li.textContent = students[i].getElementsByTagName("name")[0].textContent;
+
+                    if (marks < 50) {
+                        li.classList.add("below-50");
+                        li.setAttribute("data-marks", marks);
                     }
+
+                    studentList.appendChild(li);
                 }
             }
         };
