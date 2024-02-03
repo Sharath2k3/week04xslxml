@@ -5,25 +5,52 @@
     <html>
       <head>
         <style>
-          table {
+          body {
             font-family: Arial, sans-serif;
-            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+          }
+
+          header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+          }
+
+          h2 {
+            color: #333;
+          }
+
+          table {
             width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
           }
 
           th, td {
-            border: 1px solid #dddddd;
+            padding: 15px;
             text-align: left;
-            padding: 8px;
+            border-bottom: 1px solid #ddd;
           }
 
           th {
-            background-color: #f2f2f2;
+            background-color: #4CAF50;
+            color: white;
+          }
+
+          tr:hover {
+            background-color: #f5f5f5;
           }
         </style>
       </head>
       <body>
-        <h2>Student Information</h2>
+        <header>
+          <h2>Student Information</h2>
+        </header>
         <table>
           <tr>
             <th>Name</th>
