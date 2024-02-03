@@ -1,37 +1,24 @@
-<!-- students.xsl -->
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output method="html" indent="yes"/>
 
-  <xsl:template match="/students">
+  <xsl:template match="/">
     <html>
       <head>
         <style>
-          body {
-            font-family: 'Arial', sans-serif;
-            /* No background color */
-          }
-          h2 {
-            /* No color */
-          }
           table {
-            width: 100%;
+            font-family: Arial, sans-serif;
             border-collapse: collapse;
-            margin-top: 20px;
+            width: 100%;
           }
+
           th, td {
             border: 1px solid #dddddd;
             text-align: left;
-            padding: 12px;
+            padding: 8px;
           }
+
           th {
-            /* No background color */
-            color: black;
-          }
-          tr:nth-child(even) {
-            /* No background color */
-          }
-          tr:hover {
-            /* No background color */
+            background-color: #f2f2f2;
           }
         </style>
       </head>
@@ -46,27 +33,23 @@
             <th>Subject 3</th>
             <th>Total</th>
             <th>Average</th>
-            <th>Rank</th>
           </tr>
-          <xsl:apply-templates select="student">
-            <xsl:sort select="total" data-type="number" order="descending"/>
-          </xsl:apply-templates>
+          <xsl:apply-templates select="students/student" />
         </table>
       </body>
     </html>
   </xsl:template>
 
   <xsl:template match="student">
-    <xsl:variable name="rank" select="position()" />
     <tr>
-      <td><xsl:value-of select="name"/></td>
-      <td><xsl:value-of select="rollno"/></td>
-      <td><xsl:value-of select="marks/subject1"/></td>
-      <td><xsl:value-of select="marks/subject2"/></td>
-      <td><xsl:value-of select="marks/subject3"/></td>
-      <td><xsl:value-of select="total"/></td>
-      <td><xsl:value-of select="average"/></td>
-      <td><xsl:value-of select="$rank"/></td>
+      <td><xsl:value-of select="name" /></td>
+      <td><xsl:value-of select="rollno" /></td>
+      <td><xsl:value-of select="marks/subject1" /></td>
+      <td><xsl:value-of select="marks/subject2" /></td>
+      <td><xsl:value-of select="marks/subject3" /></td>
+      <td><xsl:value-of select="total" /></td>
+      <td><xsl:value-of select="average" /></td>
     </tr>
   </xsl:template>
+
 </xsl:stylesheet>
